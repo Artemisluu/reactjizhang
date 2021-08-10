@@ -31,22 +31,22 @@
     </style>
   </defs>
   <g id="标签栏-统计-未选中" transform="translate(-303 -618)">
-    <g id="矩形_35" data-name="矩形 35" class="cls-1" transform="translate(303 618)">
+    <g id="矩形_35" class="cls-1" transform="translate(303 618)">
       <rect class="cls-4" width="36" height="36"/>
       <rect class="cls-5" x="0.5" y="0.5" width="35" height="35"/>
     </g>
-    <g id="组_72" data-name="组 72" transform="translate(-816.65 392.7)">
-      <path id="路径_35" data-name="路径 35" class="cls-2" d="M1130.35,240.2v11.953c0,.826-.492,1.494-1.1,1.494h-5.5c-.608,0-1.1-.669-1.1-1.494V240.2" transform="translate(0 2.353)"/>
-      <g id="组_70" data-name="组 70" transform="translate(1123.2 235.082)">
-        <line id="直线_11" data-name="直线 11" class="cls-2" y2="7.435" transform="translate(3.3 0.035)"/>
-        <path id="路径_36" data-name="路径 36" class="cls-3" d="M1123.2,237.705l3.3-3.505,3.3,3.505" transform="translate(-1123.2 -234.2)"/>
+    <g id="组_72" transform="translate(-816.65 392.7)">
+      <path id="路径_35" class="cls-2" d="M1130.35,240.2v11.953c0,.826-.492,1.494-1.1,1.494h-5.5c-.608,0-1.1-.669-1.1-1.494V240.2" transform="translate(0 2.353)"/>
+      <g id="组_70" transform="translate(1123.2 235.082)">
+        <line id="直线_11" class="cls-2" y2="7.435" transform="translate(3.3 0.035)"/>
+        <path id="路径_36" class="cls-3" d="M1123.2,237.705l3.3-3.505,3.3,3.505" transform="translate(-1123.2 -234.2)"/>
       </g>
-      <path id="路径_37" data-name="路径 37" class="cls-2" d="M1141.35,236.6v16.435c0,.826-.492,1.494-1.1,1.494h-5.5c-.608,0-1.1-.669-1.1-1.494V236.6" transform="translate(0 1.471)"/>
-      <g id="组_71" data-name="组 71" transform="translate(1134.2 230.6)">
-        <line id="直线_12" data-name="直线 12" class="cls-2" y2="7.435" transform="translate(3.3 0.035)"/>
-        <path id="路径_38" data-name="路径 38" class="cls-3" d="M1134.2,234.105l3.3-3.505,3.3,3.505" transform="translate(-1134.2 -230.6)"/>
+      <path id="路径_37" class="cls-2" d="M1141.35,236.6v16.435c0,.826-.492,1.494-1.1,1.494h-5.5c-.608,0-1.1-.669-1.1-1.494V236.6" transform="translate(0 1.471)"/>
+      <g id="组_71" transform="translate(1134.2 230.6)">
+        <line id="直线_12" class="cls-2" y2="7.435" transform="translate(3.3 0.035)"/>
+        <path id="路径_38" class="cls-3" d="M1134.2,234.105l3.3-3.505,3.3,3.505" transform="translate(-1134.2 -230.6)"/>
       </g>
-      <path id="路径_39" data-name="路径 39" class="cls-2" d="M1151.35,233a1.143,1.143,0,0,1,1,1.245v19.673c0,.826-.492,1.494-1.1,1.494h-5.5c-.608,0-1.1-.669-1.1-1.494V234.245a1.143,1.143,0,0,1,1-1.245Z" transform="translate(0 0.588)"/>
+      <path id="路径_39" class="cls-2" d="M1151.35,233a1.143,1.143,0,0,1,1,1.245v19.673c0,.826-.492,1.494-1.1,1.494h-5.5c-.608,0-1.1-.669-1.1-1.494V234.245a1.143,1.143,0,0,1,1-1.245Z" transform="translate(0 0.588)"/>
     </g>
   </g>
 </svg>
