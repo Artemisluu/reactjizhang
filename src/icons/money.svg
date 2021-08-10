@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <style>
+      .cls-1, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        stroke: #707070;
+        opacity: 0;
+      }
+
+      .cls-2, .cls-4, .cls-7 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-5 {
+        stroke: #686868;
+      }
+
+      .cls-2, .cls-4, .cls-5 {
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        fill: #ffd91c;
+        stroke-linejoin: round;
+      }
+
+      .cls-4 {
+        stroke: #ffd91c;
+      }
+
+      .cls-6 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="标签栏-记账-选中" transform="translate(-36 -618)">
+    <g id="矩形_33" data-name="矩形 33" class="cls-1" transform="translate(36 618)">
+      <rect class="cls-6" width="36" height="36"/>
+      <rect class="cls-7" x="0.5" y="0.5" width="35" height="35"/>
+    </g>
+    <g id="组_68" data-name="组 68" transform="translate(-977 362)">
+      <path id="路径_30" data-name="路径 30" class="cls-2" d="M1041,286h-20a2,2,0,0,1-2-2V264a2,2,0,0,1,2-2h20"/>
+      <path id="路径_31" data-name="路径 31" class="cls-3" d="M1041.259,265l-1.741,1.993v12.955H1043V266.993Z"/>
+      <rect id="矩形_36" data-name="矩形 36" class="cls-3" width="3.482" height="3.052" transform="translate(1039.518 279.948)"/>
+      <line id="直线_5" data-name="直线 5" class="cls-4" x2="15" transform="translate(1021.5 267.5)"/>
+      <line id="直线_6" data-name="直线 6" class="cls-4" x2="15" transform="translate(1021.5 274.5)"/>
+      <line id="直线_7" data-name="直线 7" class="cls-4" x2="15" transform="translate(1021.5 281.5)"/>
+      <path id="路径_32" data-name="路径 32" class="cls-5" d="M1033.5,277.5"/>
+      <path id="路径_33" data-name="路径 33" class="cls-5" d="M1020.5,277.5"/>
+    </g>
+  </g>
+</svg>
