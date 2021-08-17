@@ -5,10 +5,10 @@ import {
     Route,
     Redirect
 } from 'react-router-dom';
-import Tags from './icons/Views/Tags';
-import Money from './icons/Views/Money';
-import Statistics from './icons/Views/Statistics';
-import NoMatch from './icons/Views/Nomatch';
+import Tags from './Views/Tags';
+import Money from './Views/Money';
+import Statistics from './Views/Statistics';
+import NoMatch from './Views/Nomatch';
 
 
 

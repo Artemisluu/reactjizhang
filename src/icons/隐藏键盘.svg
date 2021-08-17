@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="375" height="20" viewBox="0 0 375 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fafafa;
+      }
+
+      .cls-2 {
+        fill: #fafafa;
+        stroke: #aaa;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="隐藏键盘" transform="translate(0 -273)">
+    <rect id="矩形_13" class="cls-1" width="375" height="20" transform="translate(0 273)"/>
+    <path id="下拉箭头" class="cls-2" d="M468.3,136.053l5.425,6.956,6.4-6.956" transform="translate(-286.797 144.447)"/>
+  </g>
+</svg>

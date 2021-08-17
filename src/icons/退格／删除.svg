@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="74" height="74" viewBox="0 0 74 74">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+        stroke: #b1b1b1;
+        stroke-linecap: round;
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        filter: url(#椭圆_1);
+      }
+    </style>
+    <filter id="椭圆_1" x="0" y="0" width="74" height="74" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="退格_删除" data-name="退格/删除" transform="translate(-288 -308)">
+    <g id="组_21" data-name="组 21" transform="translate(291 310.633)">
+      <g id="组_2" data-name="组 2">
+        <g id="组_1" data-name="组 1">
+          <g class="cls-4" transform="matrix(1, 0, 0, 1, -3, -2.63)">
+            <circle id="椭圆_1-2" data-name="椭圆 1" class="cls-1" cx="34" cy="34" r="34" transform="translate(3 3)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="组_83" data-name="组 83" transform="translate(124 -339)">
+      <path id="路径_48" data-name="路径 48" class="cls-2" d="M199.034,671,185,683.635l14.034,12.635" transform="translate(0)"/>
+      <path id="路径_49" data-name="路径 49" class="cls-3" d="M2.421,0H35.455" transform="translate(184.13 683.461)"/>
+    </g>
+  </g>
+</svg>

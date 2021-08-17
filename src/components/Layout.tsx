@@ -8,8 +8,11 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 const Main = styled.div`
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   overflow: auto;
+  position: relative;
 `;
 
 const Layout = (props:any) => {

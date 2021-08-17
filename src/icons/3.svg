@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="74" height="74" viewBox="0 0 74 74">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-size: 27px;
+        font-family: PingFangSC-Heavy, PingFang SC;
+        font-weight: 800;
+      }
+
+      .cls-3 {
+        filter: url(#椭圆_1);
+      }
+    </style>
+    <filter id="椭圆_1" x="0" y="0" width="74" height="74" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="_3" data-name="3" transform="translate(3 2.633)">
+    <g id="组_2" data-name="组 2">
+      <g id="组_1" data-name="组 1">
+        <g class="cls-3" transform="matrix(1, 0, 0, 1, -3, -2.63)">
+          <circle id="椭圆_1-2" data-name="椭圆 1" class="cls-1" cx="34" cy="34" r="34" transform="translate(3 3)"/>
+        </g>
+        <text id="_3-2" data-name="3" class="cls-2" transform="translate(26 44.367)"><tspan x="0" y="0">3</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
