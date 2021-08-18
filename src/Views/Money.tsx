@@ -30,80 +30,75 @@ import {TagsSection} from './Money/TagsSection';
 import {TagList} from './Money/TagList';
 import {EmptySection} from './Money/EmpeySection';
 import {NumberPadSection} from './Money/NumberPadSection';
-import {BILL_TYPE} from '../constants'
+import {BILL_TYPE} from '../constants';
 
 function Money() {
-    const [billType,setBillType] = useState(BILL_TYPE.PAYMENT);
+    const [billType, setBillType] = useState(BILL_TYPE.PAYMENT);
     const [showNumberPad, setShowNumberPad] = useState(false);
     const togglePad = useCallback(() => {
         setShowNumberPad(!showNumberPad);
-    },[showNumberPad])
-    const showPad = useCallback(()=>{
+    }, [showNumberPad]);
+    const showPad = useCallback(() => {
         setShowNumberPad(true);
-    },[])
+    }, []);
     const hidePad = useCallback(() => {
         setShowNumberPad(false);
-    },[])
+    }, []);
+    const [output, setOutput] = useState('0');
+    const onClickButtonWrapper = (e: React.MouseEvent) => {
+        const target = e.target as HTMLElement;
+        let text = '';
+        if (target.nodeName === 'use') {
+            text = target.parentElement!.getAttribute('data-text') ?? '';
+        } else if (target.nodeName === 'svg') {
+            text = target.getAttribute('data-text') ?? '';
+        }
+        if (text === null) {
+            return;
+        }
+        switch (text) {
+            case '0':
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+                if (output === '0'){
+                    setOutput(text);
+                }else {
+                    setOutput(output + text);
+                }
+
+                break;
+            case '删除':
+                console.log('删除');
+                break;
+            case '.':
+                console.log('点');
+                break;
+            case '清空':
+                console.log('清空');
+                break;
+            case 'OK':
+                console.log('确认');
+                break;
+        }
+    };
+
     return (
         <Layout>
-            <CategorySection billType={billType} setBillType={setBillType} showNumberPad={showPad}/>
+            <CategorySection billType={billType} setBillType={setBillType} showNumberPad={showPad} output={output}/>
             <NotesSection/>
             <TagsSection>
-                <TagList />
+                <TagList/>
             </TagsSection>
             <EmptySection>
             </EmptySection>
-            {showNumberPad && (
-                <NumberPadSection>
-                    <svg className="hidden-bar" onClick={hidePad}>
-                        <use xlinkHref={`#${hiddenbar.id}`}></use>
-                    </svg>
-                    <div className="pad">
-                        <svg>
-                            <use xlinkHref={`#${one.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${two.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${three.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${back.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${four.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${five.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${six.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${clear.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${seven.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${eight.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${nine.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${point.id}`}></use>
-                        </svg>
-                        <svg>
-                            <use xlinkHref={`#${zero.id}`}></use>
-                        </svg>
-                        <svg className="OK">
-                            <use xlinkHref={`#${OK.id}`}></use>
-                        </svg>
-                    </div>
-                </NumberPadSection>
-            )}
+            {showNumberPad && (<NumberPadSection hidePad={hidePad} onClickButtonWrapper={onClickButtonWrapper}/>)}
         </Layout>
     );
 }
