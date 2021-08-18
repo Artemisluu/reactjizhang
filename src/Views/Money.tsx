@@ -26,7 +26,6 @@ import zero from '../icons/0.svg';
 import OK from '../icons/OK.svg';
 import {CategorySection} from './Money/CategorySection';
 import {NotesSection} from './Money/NotesSection';
-import {TagsSection} from './Money/TagsSection';
 import {TagList} from './Money/TagList';
 import {EmptySection} from './Money/EmpeySection';
 import {NumberPadSection} from './Money/NumberPadSection';
@@ -93,9 +92,7 @@ function Money() {
         <Layout>
             <CategorySection billType={billType} setBillType={setBillType} showNumberPad={showPad} output={output}/>
             <NotesSection/>
-            <TagsSection>
-                <TagList/>
-            </TagsSection>
+            <TagList/>
             <EmptySection>
             </EmptySection>
             {showNumberPad && (<NumberPadSection hidePad={hidePad} onClickButtonWrapper={onClickButtonWrapper}/>)}
