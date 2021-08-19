@@ -17,6 +17,7 @@ import zero from '../../icons/0.svg';
 import OK from '../../icons/OK.svg';
 
 const Wrapper = styled.section`
+  width: 100%;
   position: absolute;
   bottom: 0;
   display: flex;
@@ -25,7 +26,7 @@ const Wrapper = styled.section`
   background: #FAFAFA;
 
   .hidden-bar {
-    width: 375px;
+    width: 100%;
     height: 30px;
     border-bottom: 4px solid #fff;
   }
@@ -51,6 +52,11 @@ const Wrapper = styled.section`
     }
   }
 `;
+
+type Props ={
+    value:number;
+    onChange:(value:number) => void;
+}
 const NumberPadSection: React.FC<{hidePad: () => void;onClickButtonWrapper:(e: React.MouseEvent<Element,MouseEvent>)=> void}> = ({hidePad,onClickButtonWrapper}) =>{
     return(
         <Wrapper>

@@ -63,8 +63,15 @@ const CategorySectionWrapper = styled.section`
     
   }
 `;
+type Props = {
+  value: string;
+  onChange: (value: string) => void;
+  showNumberPad: () => void;
+  output: string;
+}
 
-export const CategorySection = ({billType, setBillType,showNumberPad,output}: { billType: string; setBillType: any ;showNumberPad: () => void ;output:string}) => {
+const CategorySection: React.FC<Props> = ({ value: billType, onChange: setBillType, showNumberPad, output }) =>{
+
     const [showTypeOptions, setShowTypeOptions] = useState(false);
     const onToggle = useCallback(() => {
         setShowTypeOptions(!showTypeOptions);
@@ -72,7 +79,6 @@ export const CategorySection = ({billType, setBillType,showNumberPad,output}: { 
     const selectBillType = useCallback( () => {
       setBillType(billType === BILL_TYPE.PAYMENT ? BILL_TYPE.INCOME : BILL_TYPE.PAYMENT);
     },[billType,setBillType]);
-
 
     return (
         <CategorySectionWrapper>
@@ -95,4 +101,4 @@ export const CategorySection = ({billType, setBillType,showNumberPad,output}: { 
         </CategorySectionWrapper>
     );
 };
-
+export {CategorySection}

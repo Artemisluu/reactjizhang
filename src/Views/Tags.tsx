@@ -6,7 +6,10 @@ import cancel from  '../icons/cancel.svg';
 import 下拉 from '../icons/下拉.svg';
 
 const TagsPageWrapper = styled.section`
-  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   background: #F2F3F5;
 
   .delete-section {
@@ -33,10 +36,10 @@ const TagsPageWrapper = styled.section`
     
   }
   .tags{
+    flex-grow: 1;
     margin-top: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     >li{
       display: flex;

@@ -32,25 +32,33 @@ import {NumberPadSection} from './Money/NumberPadSection';
 import {BILL_TYPE} from '../constants';
 
 function Money() {
-    const [billType, setBillType] = useState(BILL_TYPE.PAYMENT);
+    const [selected, setSelected] = useState({
+        tags: [] as string[],
+        note: '',
+        category: BILL_TYPE.PAYMENT,
+        amount: 0
+    });
     const [showNumberPad, setShowNumberPad] = useState(false);
-    const togglePad = useCallback(() => {
-        setShowNumberPad(!showNumberPad);
-    }, [showNumberPad]);
     const showPad = useCallback(() => {
         setShowNumberPad(true);
     }, []);
     const hidePad = useCallback(() => {
         setShowNumberPad(false);
     }, []);
-    const [output, _setOutput] = useState('0');
-    const setOutput = (output:string) =>{
-        if (output.length > 10){
-            output = output.slice(0,10);
-        }else if(output.length === 0){
-            output = '0'
+    const output = selected.amount.toString()
+    const setOutput = (output: string) => {
+        let value = 0;
+        if (output.length > 10) {
+            value = parseFloat(output.slice(0, 10));
+        } else if (output.length === 0) {
+            value = 0;
+        }else {
+            value = parseFloat(output)
         }
-        _setOutput(output);
+        setSelected({
+            ...selected,
+            amount: value
+        })
     };
     const onClickButtonWrapper = (e: React.MouseEvent) => {
         const target = e.target as HTMLElement;
@@ -81,14 +89,16 @@ function Money() {
                 }
                 break;
             case '返回':
-                if(output.length === 1){
+                if (output.length === 1) {
                     setOutput('');
-                }else {
-                    setOutput(output.slice(0,-1));
+                } else {
+                    setOutput(output.slice(0, -1));
                 }
                 break;
             case '.':
-                if(output.indexOf('.') >= 0){return;}
+                if (output.indexOf('.') >= 0) {
+                    return;
+                }
                 setOutput(output + '.');
                 break;
             case '清空':
@@ -102,12 +112,44 @@ function Money() {
 
     return (
         <Layout>
-            <CategorySection billType={billType} setBillType={setBillType} showNumberPad={showPad} output={output}/>
-            <NotesSection/>
-            <TagList/>
+            {selected.tags.join(',')}
+            <hr/>
+            {selected.note}
+            <hr/>
+            {selected.category}
+            <hr/>
+            {selected.amount}
+            <CategorySection
+                value = {selected.category}
+                onChange={(category) => {
+                    setSelected({
+                        ...selected,
+                        category: category
+                    });
+                }}
+                showNumberPad={showPad}
+                output={output}
+            />
+            <NotesSection
+                value={selected.note}
+                onChange={(note) => setSelected({
+                    ...selected,
+                    note: note
+                })}
+            />
+            <TagList
+                value={selected.tags}
+                onChange={(tags) => setSelected({
+                    ...selected,
+                    tags: tags
+                })}
+            />
             <EmptySection>
             </EmptySection>
-            {showNumberPad && (<NumberPadSection hidePad={hidePad} onClickButtonWrapper={onClickButtonWrapper}/>)}
+            {showNumberPad && (<NumberPadSection
+                hidePad={hidePad}
+                onClickButtonWrapper={onClickButtonWrapper}
+            />)}
         </Layout>
     );
 }
