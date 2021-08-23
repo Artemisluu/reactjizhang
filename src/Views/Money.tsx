@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import React, {useState, useEffect, useRef, ReactNode, useCallback} from 'react';
+import React, {useState, useEffect, useRef, ReactNode, useCallback, useContext} from 'react';
 import styled from 'styled-components';
 
 import Newtag from '../icons/Newtag.svg';
@@ -45,20 +45,21 @@ function Money() {
     const hidePad = useCallback(() => {
         setShowNumberPad(false);
     }, []);
-    const output = selected.amount.toString()
+    const [output,_setOutput] = useState(selected.amount.toString());
     const setOutput = (output: string) => {
-        let value = 0;
+        let newvalue:string;
         if (output.length > 10) {
-            value = parseFloat(output.slice(0, 10));
+            newvalue = output.slice(0, 10);
         } else if (output.length === 0) {
-            value = 0;
+            newvalue = '0';
         }else {
-            value = parseFloat(output)
+            newvalue = output;
         }
+        _setOutput(newvalue);
         setSelected({
             ...selected,
-            amount: value
-        })
+            amount: parseFloat(newvalue),
+        });
     };
     const onClickButtonWrapper = (e: React.MouseEvent) => {
         const target = e.target as HTMLElement;
@@ -112,13 +113,6 @@ function Money() {
 
     return (
         <Layout>
-            {selected.tags.join(',')}
-            <hr/>
-            {selected.note}
-            <hr/>
-            {selected.category}
-            <hr/>
-            {selected.amount}
             <CategorySection
                 value = {selected.category}
                 onChange={(category) => {

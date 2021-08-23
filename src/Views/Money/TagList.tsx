@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import Newtag from '../../icons/Newtag.svg';
 import clothes from '../../icons/clothes.svg';
 import eat from '../../icons/eat.svg';
 import live from '../../icons/live.svg';
 import walk from '../../icons/walk.svg';
 import others from '../../icons/others.svg';
+import {TagContext} from '../../context';
 
 const _TagList = styled.ol`
   display: flex;
@@ -57,9 +58,11 @@ type Props = {
     value:string[];
     onChange:(selected:string[]) => void;
 }
+
 const TagList: React.FC <Props> = (props) => {
-    const [tags, setTags] = useState(['衣', '食', '住', '行']);
     const selectedTags = props.value;
+    const {tags,setTags} = useContext(TagContext)!;
+
     const onAddTag = () => {
         const tagName = window.prompt('想要添加的标签名称是');
         if (tagName !== null) {
