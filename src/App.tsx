@@ -11,6 +11,7 @@ import Statistics from './Views/Statistics';
 import NoMatch from './Views/Nomatch';
 import {useTags} from './useTags';
 import {TagContext} from './context'
+import {TagEdit} from './Views/TagEdit'
 
 function App() {
     const {tags, setTags} = useTags();
@@ -18,13 +19,16 @@ function App() {
         <TagContext.Provider value={{tags,setTags}}>
             <Router>
                 <Switch>
-                    <Route path="/tags">
+                    <Route exact path="/tags">
                         <Tags/>
                     </Route>
-                    <Route path="/money">
+                    <Route exact path="/tags/:tag">
+                        <TagEdit/>
+                    </Route>
+                    <Route exact path="/money">
                         <Money/>
                     </Route>
-                    <Route path="/statistics">
+                    <Route exact path="/statistics">
                         <Statistics/>
                     </Route>
                     <Redirect exact from="/" to="/money"/>

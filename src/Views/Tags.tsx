@@ -6,6 +6,7 @@ import cancel from '../icons/cancel.svg';
 import 下拉 from '../icons/下拉.svg';
 import edittag from '../icons/编辑标签.svg';
 import {TagContext} from '../context';
+import { Link } from 'react-router-dom';
 
 const TagsPageWrapper = styled.section`
   flex-grow: 1;
@@ -15,19 +16,27 @@ const TagsPageWrapper = styled.section`
   background: #F2F3F5;
 
   .addbutton {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    
     >svg{
-      width: 134px;
-      height: 154px;
+      width: 114px;
+      height: 142px;
     }
     .text {
       font-size: 13px;
       font-family: PingFang SC;
       font-weight: 600;
-      line-height: 18px;
       color: #707070;
       display: flex;
       align-items: center;
       justify-content: center;
+      position: absolute;
+      margin-top: 120px;
+      box-shadow: 6px 6px 6px #e2e6ef;
+      
     }
 
   }
@@ -39,24 +48,26 @@ const TagsPageWrapper = styled.section`
     flex-direction: column;
 
     > li {
-      display: flex;
-      align-items: center;
-      width: 353px;
-      height: 52px;
-      background: #FFFFFF;
-      border-radius: 15px;
-      font-size: 20px;
-      font-family: PingFang SC;
-      font-weight: 400;
-      line-height: 24px;
-      color: #000000;
-      margin-top: 8px;
-
-      > svg {
-        width: 25px;
-        height: 25px;
-        margin-right: 41px;
+      >a{
+        display: flex;
+        align-items: center;
+        width: 353px;
+        height: 52px;
+        background: #FFFFFF;
+        border-radius: 15px;
+        font-size: 20px;
+        font-family: PingFang SC;
+        font-weight: 400;
+        line-height: 24px;
+        color: #000000;
+        margin-top: 8px;
+        > svg {
+          width: 25px;
+          height: 25px;
+          margin-right: 41px;
+        }
       }
+      
 
       span.text {
         font-size: 20px;
@@ -91,6 +102,7 @@ function Tags() {
                 <ol className="tags">
                     {tags.map((tag, index) =>
                         <li key={tag}>
+                            <Link to={'/tags/' + tag}>
                             <span className="text">{tag}</span>
                             <svg
                                 onClick={() => {
@@ -100,17 +112,19 @@ function Tags() {
                             >
                                 <use xlinkHref={`#${cancel.id}`}></use>
                             </svg>
+                            </Link>
                         </li>
                     )}
                 </ol>
-                <div className="addbutton">
+
                 <Center>
                     <Space/>
                     <Space/>
+                    <div className="addbutton">
                         <svg><use xlinkHref={`#${edittag.id}`}></use></svg>
                         <div className="text">新增标签</div>
+                    </div>
                 </Center>
-                </div>
             </TagsPageWrapper>
         </Layout>
     );
