@@ -7,6 +7,7 @@ import live from '../../icons/live.svg';
 import walk from '../../icons/walk.svg';
 import others from '../../icons/others.svg';
 import {TagContext} from '../../context';
+import {createdId} from '../../lib/created';
 
 const _TagList = styled.ol`
   display: flex;
@@ -66,7 +67,7 @@ const TagList: React.FC <Props> = (props) => {
     const onAddTag = () => {
         const tagName = window.prompt('想要添加的标签名称是');
         if (tagName !== null) {
-            setTags([...tags, {id:Math.random(),name:tagName}]);
+            setTags([...tags, {id:createdId(),name:tagName}]);
         }
     };
     const onToggleTag = (tagId: number) => {
