@@ -33,7 +33,7 @@ import {BILL_TYPE} from '../constants';
 
 function Money() {
     const [selected, setSelected] = useState({
-        tags: [] as string[],
+        tagIds: [] as number[],
         note: '',
         category: BILL_TYPE.PAYMENT,
         amount: 0
@@ -132,10 +132,10 @@ function Money() {
                 })}
             />
             <TagList
-                value={selected.tags}
+                value={selected.tagIds}
                 onChange={(tags) => setSelected({
                     ...selected,
-                    tags: tags
+                    tagIds: tags
                 })}
             />
             <EmptySection>

@@ -55,26 +55,26 @@ const _TagList = styled.ol`
   }
 `;
 type Props = {
-    value:string[];
-    onChange:(selected:string[]) => void;
+    value:number[];
+    onChange:(selected:number[]) => void;
 }
 
 const TagList: React.FC <Props> = (props) => {
-    const selectedTags = props.value;
+    const selectedTagIds = props.value;
     const {tags,setTags} = useContext(TagContext)!;
 
     const onAddTag = () => {
         const tagName = window.prompt('想要添加的标签名称是');
         if (tagName !== null) {
-            setTags([...tags, tagName]);
+            setTags([...tags, {id:Math.random(),name:tagName}]);
         }
     };
-    const onToggleTag = (tag: string) => {
-        const index = selectedTags.indexOf(tag);
+    const onToggleTag = (tagId: number) => {
+        const index = selectedTagIds.indexOf(tagId);
         if (index >= 0) {
-            props.onChange(selectedTags.filter(t => t != tag));
+            props.onChange(selectedTagIds.filter(t => t != tagId));
         } else {
-            props.onChange([...selectedTags, tag]);
+            props.onChange([...selectedTagIds, tagId]);
         }
 
     };
@@ -92,22 +92,22 @@ const TagList: React.FC <Props> = (props) => {
                     '住': live,
                     '行': walk,
                 };
-                const svg = mapTextToSvg[tag];
+                const svg = mapTextToSvg[tag.name];
                 return (
                     <li
-                        key={tag}
+                        key={tag.id}
                         className={
                             [
                                 svg ? '' : 'others',
-                                selectedTags.indexOf(tag) >= 0 ? 'selected' : ''
+                                selectedTagIds.indexOf(tag.id) >= 0 ? 'selected' : ''
                             ].join(' ')
                         }
-                        onClick={() => onToggleTag(tag)}
+                        onClick={() => onToggleTag(tag.id)}
                     >
                         <svg className="tag-item">
                             <use xlinkHref={`#${svg?.id || others.id}`}></use>
                         </svg>
-                        {!svg && <span>{tag}</span>}
+                        {!svg && <span>{tag.name}</span>}
                     </li>
                 );
             })}

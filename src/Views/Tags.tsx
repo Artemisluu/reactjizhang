@@ -101,9 +101,9 @@ function Tags() {
             <TagsPageWrapper>
                 <ol className="tags">
                     {tags.map((tag, index) =>
-                        <li key={tag}>
+                        <li key={tag.id}>
                             <Link to={'/tags/' + tag}>
-                            <span className="text">{tag}</span>
+                            <span className="text">{tag.name}</span>
                             <svg
                                 onClick={() => {
                                     tags.splice(index, 1);
