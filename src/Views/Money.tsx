@@ -113,6 +113,8 @@ function Money() {
 
     return (
         <Layout>
+            {selected.note}
+            <hr/>
             <CategorySection
                 value = {selected.category}
                 onChange={(category) => {

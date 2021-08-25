@@ -102,8 +102,8 @@ function Tags() {
                 <ol className="tags">
                     {tags.map((tag, index) =>
                         <li key={tag.id}>
-                            <Link to={'/tags/' + tag}>
-                            <span className="text">{tag.name}</span>
+                            <Link to={'/tags/' + tag.id}>
+                            <span className="text">{tag.id}:{tag.name}</span>
                             <svg
                                 onClick={() => {
                                     tags.splice(index, 1);
